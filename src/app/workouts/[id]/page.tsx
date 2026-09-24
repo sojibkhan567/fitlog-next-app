@@ -4,7 +4,7 @@ import React from 'react'
 import { FaRegBookmark } from 'react-icons/fa6'
 import { LuCalendarPlus2 } from 'react-icons/lu'
 
-const page = () => {
+const WorkoutDetailsPage = () => {
     return (
         <section className='pt-20 pb-25'>
             <div className='grid lg:grid-cols-2 xl:grid-cols-2 gap-15'>
@@ -73,7 +73,7 @@ const page = () => {
                         <Link href="/">
                             <button className='flex gap-3 items-center px-6 py-3 text-secondary font-bold bg-primary rounded-xl'>
                                 <LuCalendarPlus2 size={24} />
-                                Add to today's plan
+                                Add to today&apos;s plan
                             </button>
                         </Link>
                         <Link href="/">
@@ -90,4 +90,4 @@ const page = () => {
     )
 }
 
-export default page
+export default WorkoutDetailsPage;
