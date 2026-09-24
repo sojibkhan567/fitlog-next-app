@@ -6,7 +6,7 @@ const Footer = () => {
             <div className='container mx-auto'>
                 <div className='flex justify-between items-center'>
                     <Image src="/footer-logo.png" alt='footer-logo' width={100} height={100} />
-                    <p>© 2026 FitLog — Workout Library. Train hard, log honest.</p>
+                    <p className='text-gray-500'>© 2026 FitLog — Workout Library. Train hard, log honest.</p>
                 </div>
             </div>
         </footer>
