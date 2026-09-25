@@ -1,8 +1,12 @@
 "use client"
+import { useWorkout } from '@/context/WorkoutContext'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const Navbar = () => {
+
+    const {todaysPlan, savedPlan} = useWorkout();
+
     return (
         <nav className='py-5 border-b border-b-gray-700'>
             <div className='container mx-auto flex justify-between items-center'>
@@ -30,13 +34,13 @@ const Navbar = () => {
                     <Link href="/my-plans" className='flex gap-2 items-center'>
                         <p className='font-medium'>Plan</p>
                         <div className='h-7 w-7 flex justify-center items-center rounded-full bg-primary'>
-                            <p className='text-secondary font-bold'>0</p>
+                            <p className='text-secondary text-sm font-bold'>{todaysPlan.length}</p>
                         </div>
                     </Link>
                     <Link href="/my-plans" className='flex gap-2 items-center'>
                         <p className='font-medium'>Saved</p>
                         <div className='h-7 w-7 flex justify-center items-center rounded-full border'>
-                            <p className='text-white font-bold'>0</p>
+                            <p className='text-sm text-white font-bold'>{savedPlan.length}</p>
                         </div>
                     </Link>
                 </div>

@@ -71,8 +71,8 @@ const WorkoutDetailsCard = ({ workout }: WorkoutDetailsCardProps) => {
 
             {/** btn list */}
             <div className='flex gap-5'>
-                <AddTodaytBtn />
-                <SaveLaterBtn />
+                <AddTodaytBtn workout={workout} />
+                <SaveLaterBtn workout={workout} />
             </div>
         </div>
     )

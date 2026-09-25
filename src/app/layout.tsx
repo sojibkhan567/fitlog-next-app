@@ -3,6 +3,8 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import { WorkoutProvider } from "@/context/WorkoutContext";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,11 +28,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${oswald.variable} h-full antialiased`}
     >
       <body>
-        <Navbar />
-        <main className="container mx-auto">
-          {children}
-        </main>
-        <Footer />
+        <WorkoutProvider>
+          <Navbar />
+          <main className="container mx-auto">
+            {children}
+          </main>
+          <Footer />
+        </WorkoutProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+        />
       </body>
     </html>
   );
