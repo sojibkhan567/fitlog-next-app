@@ -13,8 +13,12 @@
   --font-inter: var(--font-inter);
   --font-oswald: var(--font-oswald);
 
-  --color-primary: #C2F800;
+  --color-primary: #ccff00;
   --color-secondary: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

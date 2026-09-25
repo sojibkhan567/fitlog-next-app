@@ -7,8 +7,9 @@ export default function Home() {
   return (
     <>
       <Banner />
-      {/** workout library section */}
-      <section className="pb-20">
+
+      {/** Workout library section */}
+      <section id="library" className="pb-20">
         <div className="mb-8">
           <h1 className="text-4xl text-white uppercase font-bold leading-tight mb-2">The Library</h1>
           <p className="text-gray-400">Twelve lifts covering every major muscle group.</p>

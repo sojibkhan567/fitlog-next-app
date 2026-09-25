@@ -18,9 +18,9 @@ const Banner = () => {
                         into today&apos;s plan, and watch the week&apos;s work add up.
                     </p>
                     <div className="mt-7 flex flex-wrap gap-4">
-                        <button className="rounded-lg bg-primary px-6 py-3 font-bold uppercase text-secondary transition hover:bg-lime-400">
+                        <a href='#library' className="rounded-lg bg-primary px-6 py-3 font-bold uppercase text-secondary transition hover:bg-lime-400">
                             Browse workouts
-                        </button>
+                        </a>
                     </div>
                 </div>
                 {/* Right Column - Image */}

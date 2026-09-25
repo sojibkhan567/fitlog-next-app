@@ -6,7 +6,7 @@ import { MdOutlineStarBorder, MdOutlineWatchLater } from "react-icons/md";
 const LibraryCard = () => {
     return (
         <Link href="/workouts/5">
-            <div className="w-full bg-[#1F232B] rounded-xl">
+            <div className="w-full bg-[#14171d] rounded-xl">
                 <div className="relative h-55 rounded-t-2xl w-full overflow-hidden">
                     <Image className="object-cover" src="/images/card-img.png" alt="img" fill />
                 </div>
