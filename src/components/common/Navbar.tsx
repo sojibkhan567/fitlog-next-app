@@ -2,10 +2,13 @@
 import { useWorkout } from '@/context/WorkoutContext'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
 
-    const {todaysPlan, savedPlan} = useWorkout();
+    const { todaysPlan, savedPlan } = useWorkout();
+
+    const pathName = usePathname();
 
     return (
         <nav className='py-5 border-b border-b-gray-700'>
@@ -20,12 +23,12 @@ const Navbar = () => {
                 </div>
 
                 {/** nav-links */}
-                <div className='flex gap-6'>
+                <div className='flex gap-5'>
                     <Link href="/">
-                        <button className='py-2 px-6 rounded-full bg-[#1A2312] text-primary cursor-pointer'>Workouts</button>
+                        <button className={`${pathName === "/" ? "bg-[#1A2312] text-primary" : " "} py-2 px-6 rounded-full cursor-pointer`}>Workouts</button>
                     </Link>
                     <Link href="/my-plans">
-                        <button className='py-2 px-6 cursor-pointer'>My Plan</button>
+                        <button className={`${pathName === "/my-plans" ? "bg-[#1A2312] text-primary" : " "} py-2 px-6 rounded-full cursor-pointer`}>My Plan</button>
                     </Link>
                 </div>
 
