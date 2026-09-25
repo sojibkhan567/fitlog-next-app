@@ -13,7 +13,7 @@ const getWorkouts = async () => {
 const WorkoutsLibrary = async () => {
 
     const workoutsData = await getWorkouts();
-    console.log(workoutsData)
+    //console.log(workoutsData)
 
     return (
         <section id="library" className="pb-20">
