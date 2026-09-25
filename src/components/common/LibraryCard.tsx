@@ -1,14 +1,19 @@
+import { WorkoutDataType } from "@/types/WorkoutTpes";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFireFlameCurved } from "react-icons/fa6";
 import { MdOutlineStarBorder, MdOutlineWatchLater } from "react-icons/md";
 
-const LibraryCard = () => {
+type LibraryCardProps = {
+    workout: WorkoutDataType
+}
+
+const LibraryCard = ({ workout }: LibraryCardProps) => {
     return (
         <Link href="/workouts/5">
             <div className="w-full bg-[#14171d] rounded-xl">
-                <div className="relative h-55 rounded-t-2xl w-full overflow-hidden">
-                    <Image className="object-cover" src="/images/card-img.png" alt="img" fill />
+                <div className="relative h-70 rounded-t-2xl w-full overflow-hidden">
+                    <Image className="object-cover" src={workout.image} alt="img" fill />
                 </div>
 
                 <div className="p-7 space-y-2">
