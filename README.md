@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ Workout Library
 
-## Getting Started
+A modern and responsive **Workout Library web application** built with Next.js and TypeScript. Users can explore different workouts, view detailed workout information, add exercises to **Today's Plan**, and save workouts for later. The application uses Context API and LocalStorage to maintain workout selections even after refreshing the page.
 
-First, run the development server:
+## 🚀 Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+* **Next.js** – React framework for building the application
+* **React** – Component-based UI development
+* **TypeScript** – Type-safe JavaScript development
+* **Tailwind CSS** – Responsive and modern UI styling
+* **Context API** – Global state management
+* **LocalStorage** – Persistent client-side data storage
+* **React Toastify** – Toast notifications
+* **React Icons** – UI icons
+
+## ✨ Key Features
+
+### 1. 🏋️ Workout Library
+
+Browse a collection of workouts with useful information such as workout name, muscle groups, difficulty, duration, equipment, calories burned, sets, reps, and rating.
+
+### 2. 📋 Workout Details
+
+View complete information about an individual workout on a dynamic details page, including descriptions and step-by-step instructions.
+
+### 3. 📅 Today's Workout Plan
+
+Add workouts to **Today's Plan** with a maximum limit of **5 workouts**. Duplicate workouts cannot be added.
+
+### 4. 💾 Save for Later
+
+Save interesting workouts for later and access them from a separate saved workout list. The application prevents the same workout from being saved multiple times.
+
+### 5. 🔄 Persistent Data & Notifications
+
+Workout selections are stored in **LocalStorage**, so the data remains available after refreshing the browser. **React Toastify** provides feedback when workouts are added, removed, saved, or when an invalid action is attempted.
+
+## 📱 Responsive Design
+
+The application is designed to work smoothly across:
+
+* 📱 Mobile devices
+* 📱 Tablets
+* 💻 Laptops
+* 🖥️ Desktop screens
+
+## 📂 Project Structure
+
+```text
+app/
+├── page.tsx
+├── workouts/
+│   └── [id]/
+│       └── page.tsx
+└── layout.tsx
+
+components/
+├── AddToPlanButton.tsx
+├── SaveForLaterButton.tsx
+└── ...
+
+context/
+└── WorkoutContext.tsx
+
+types/
+└── workout.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Project Goal
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The goal of this project is to provide a simple and user-friendly platform for discovering workouts and managing a personalized daily workout plan.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
