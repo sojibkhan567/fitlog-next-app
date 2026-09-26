@@ -2,18 +2,52 @@ import { useWorkout } from '@/context/WorkoutContext';
 import { WorkoutDataType } from '@/types/WorkoutTpes';
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react';
 import { FaCheck } from "react-icons/fa";
 import { FaFireFlameCurved } from 'react-icons/fa6'
 import { MdOutlineStarBorder, MdOutlineWatchLater } from 'react-icons/md'
 import { RxCross1 } from "react-icons/rx";
+import { toast } from 'react-toastify';
 
 type PlanListingCardProps = {
     workout: WorkoutDataType
     activeTab: "today" | "saved"
 }
+
 const PlanListingCard = ({ workout, activeTab }: PlanListingCardProps) => {
 
     const { removeFromTodaysPlan, removeFromSavedPlan } = useWorkout();
+
+    const [markAsDone, setMarkAsDone] = useState(false);
+
+    // handle remove today's plan button
+    const handleRemoveTodayPlanBtn = (id: number) => {
+        const success = removeFromTodaysPlan(id);
+        if (success) {
+            toast.error("Remove item from today's plan.");
+        }
+    }
+
+    // handle remove saved plan button
+    const handleRemoveSavedPlanBtn = (id: number) => {
+        const success = removeFromSavedPlan(id);
+        if (success) {
+            toast.error("Remove item from saved plan.");
+        }
+    }
+
+    // handle mark as done button activity 
+    const handleMarkAsDone = () => {
+        const newState = !markAsDone;
+        setMarkAsDone(newState);
+
+        if (newState) {
+            toast.success("Workout marked as completed! 🎉");
+        } else {
+            toast.info("Workout marked as incomplete.");
+        }
+    }
+
     return (
         <div className='bg-[#0b0d11] border border-gray-700 p-5 rounded-xl'>
             <div className='lg:flex xl:flex justify-between items-center'>
@@ -51,18 +85,26 @@ const PlanListingCard = ({ workout, activeTab }: PlanListingCardProps) => {
                             <button className='px-6 py-2 border border-gray-700 rounded-full'>View Details</button>
                         </Link>
                         {activeTab === "today" && (
-                            <button className='bg-primary text-secondary flex gap-2 items-center px-6 py-2 font-semibold border border-gray-700 rounded-full'>
-                                <FaCheck />
-                                Mark as Done
+                            <button
+                                onClick={handleMarkAsDone}
+                                className={`cursor-pointer flex gap-2 items-center px-6 py-2 border border-gray-700 rounded-full ${markAsDone ? "bg-primary text-secondary" : ""}`}
+                            >
+                                {markAsDone ? (
+                                    <>
+                                        <FaCheck />
+                                        <p>Mark as Done</p>
+                                    </>
+                                ) : "Mark as Done"
+                                }
                             </button>
                         )}
 
                         {activeTab === "today" ? (
-                            <button className='cursor-pointer' onClick={() => removeFromTodaysPlan(workout.id)}>
+                            <button className='cursor-pointer' onClick={() => handleRemoveTodayPlanBtn(workout.id)}>
                                 <RxCross1 size={22} />
                             </button>
                         ) : (
-                            <button className='cursor-pointer' onClick={() => removeFromSavedPlan(workout.id)}>
+                            <button className='cursor-pointer' onClick={() => handleRemoveSavedPlanBtn(workout.id)}>
                                 <RxCross1 size={22} />
                             </button>
                         )}

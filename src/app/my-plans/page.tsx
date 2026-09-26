@@ -27,7 +27,7 @@ const MyPlansPage = () => {
                 return a.duration - b.duration;
             }
             if (sortBy === "calories") {
-                return a.caloriesBurned - b.caloriesBurned;
+                return b.caloriesBurned - a.caloriesBurned;
             }
             if (sortBy === "rating") {
                 return b.rating - a.rating;
