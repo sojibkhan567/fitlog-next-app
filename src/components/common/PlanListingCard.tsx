@@ -15,7 +15,7 @@ type PlanListingCardProps = {
 }
 
 const PlanListingCard = ({ workout, activeTab }: PlanListingCardProps) => {
-
+    
     const { removeFromTodaysPlan, removeFromSavedPlan } = useWorkout();
 
     const [markAsDone, setMarkAsDone] = useState(false);

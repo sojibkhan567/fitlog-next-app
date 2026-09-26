@@ -1,4 +1,3 @@
-
 import { WorkoutDataType } from '@/types/WorkoutTpes'
 import AddTodaytBtn from './AddTodaytBtn'
 import SaveLaterBtn from './SaveLaterBtn'

@@ -1,5 +1,6 @@
 "use client";
 
+import Loading from '@/components/common/Loading';
 import PlanListingCard from '@/components/common/PlanListingCard'
 import EmptyData from '@/components/my-plans/EmptyData';
 import PlansSelectionTab from '@/components/my-plans/PlansSelectionTab'
@@ -12,7 +13,7 @@ type TabType = "today" | "saved";
 type SortType = "duration" | "calories" | "rating";
 
 const MyPlansPage = () => {
-    const { todaysPlan, savedPlan } = useWorkout();
+    const { todaysPlan, savedPlan, isLoaded } = useWorkout();
 
     const [activeTab, setActiveTab] = useState<TabType>("today");
     const [sortBy, setSortBy] = useState<SortType>("duration");
@@ -35,6 +36,11 @@ const MyPlansPage = () => {
             return 0;
         });
     }, [currentPlans, sortBy]);
+
+    // Loading state localStorage not yet read on client
+    if (!isLoaded) {
+        return <Loading />;
+    }
 
     return (
         <section className='pt-15 pb-20'>

@@ -14,11 +14,10 @@ const getSingleWorkout = async (id: number) => {
 }
 
 const WorkoutDetailsPage = async ({ params }: WorkoutDetailsPageProps) => {
-
     const { id } = await params;
 
     const workout: WorkoutDataType = await getSingleWorkout(id);
-    console.log(workout)
+    //console.log(workout)
 
     return (
         <section className='pt-20 pb-25'>
