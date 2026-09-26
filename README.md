@@ -1,8 +1,8 @@
-# 🏋️ Workout Library
+# 🏋️ FitLog - Workout Library Application
 
 A modern and responsive **Workout Library web application** built with Next.js and TypeScript. Users can explore different workouts, view detailed workout information, add exercises to **Today's Plan**, and save workouts for later. The application uses Context API and LocalStorage to maintain workout selections even after refreshing the page.
 
-## 🚀 Technologies Used
+## 🛠️ Technologies Used
 
 * **Next.js** – React framework for building the application
 * **React** – Component-based UI development
@@ -12,6 +12,12 @@ A modern and responsive **Workout Library web application** built with Next.js a
 * **LocalStorage** – Persistent client-side data storage
 * **React Toastify** – Toast notifications
 * **React Icons** – UI icons
+
+
+## 🚀 Live Demo
+
+#### 1. Live link : [Website_Demo](https://fitlog-next-app.vercel.app/)
+#### 2. Repository link : [Github_Link](https://github.com/sojibkhan567/fitlog-next-app)
 
 ## ✨ Key Features
 
@@ -44,32 +50,10 @@ The application is designed to work smoothly across:
 * 💻 Laptops
 * 🖥️ Desktop screens
 
-## 📂 Project Structure
-
-```text
-app/
-├── page.tsx
-├── workouts/
-│   └── [id]/
-│       └── page.tsx
-└── layout.tsx
-
-components/
-├── AddToPlanButton.tsx
-├── SaveForLaterButton.tsx
-└── ...
-
-context/
-└── WorkoutContext.tsx
-
-types/
-└── workout.ts
-```
-
 ## 🎯 Project Goal
 
 The goal of this project is to provide a simple and user-friendly platform for discovering workouts and managing a personalized daily workout plan.
 
----
+
 
 
